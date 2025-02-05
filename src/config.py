@@ -10,20 +10,23 @@ EXTRAP_PARAMS = {
     "weights": [],
     "use_tanh": True,
     "central_return": 0.04,
+    "adjustment_speed": 0.1,
     "linear": {
         "cap_return": 0.08,
         "floor_return": 0.01,
         "squeeze_factor": 0.5,
     },
     "tanh": {
-        "max_dev": 0.04,
-        "squeeze_factor": 0.10,  # higher means lower slope at the center
+        "max_dev": 0.05,
+        "squeeze_factor": 0.20, # higher means lower slope at the center
+        'floor_return': 0.0,
     }
 }
 
 # Simulation parameters
 INIT_PRICE = 1
-INIT_EARNINGS = 0.04
+INIT_EARNINGS_ANN = 0.04
+PAYOUT_RATIO = 0.5
 INT_RATE = 0.00
-SIM_MONTHS = 300
+SIM_MONTHS = 660
 INIT_MONTHS = 60
